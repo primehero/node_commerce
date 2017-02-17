@@ -1,0 +1,18 @@
+<% include ./partials/header.ejs %>
+
+	<h2 class="page-head">
+		<span class="under-l">
+			Cart
+		</span>
+	</h2>
+
+	<ul>
+		<% cart.items.forEach(i => { %>
+			<li>
+				<%= i.name %> - <%= i.quantity %> no's
+			</li>
+		<% }); %>
+	</ul>
+	<h4>Total: $ <%= cart.total %></h4>
+
+<% include ./partials/footer.ejs %>
