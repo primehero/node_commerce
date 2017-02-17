@@ -3,7 +3,8 @@ const express      = require("express"),
 	  mongoose     = require("mongoose"),
 	  cookieParser = require("cookie-parser"),
 	  session	   = require("express-session"),
-	  flash        = require("connect-flash");
+	  flash        = require("connect-flash"),
+	  methodOverride = require("method-override");
 
 const Product     = require("./models/product.js"),
 	  seed        = require("./seed.js"),
@@ -19,6 +20,7 @@ mongoose.connect("mongodb://localhost/n_commerce");
 
 
 app.set("view engine", "ejs");
+app.use(methodOverride("_method"));
 app.use(cookieParser("secret"));
 app.use(session({
 	cookie: { maxAge: 60000 },

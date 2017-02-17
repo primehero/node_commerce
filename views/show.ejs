@@ -22,7 +22,7 @@
 				<p>
 					<span class="show-price">Price:</span> $ <%= product.price %>	
 				</p>
-				<form>
+				<form action="/cart/<%= product._id %>">
 					<input type="text" class="input-quantity" name="q" value="1">
 					&nbsp;&nbsp;&nbsp;
 					<input class="btn btn-warning" type="submit" value="Add to cart">

@@ -9,7 +9,10 @@
 	<ul>
 		<% cart.items.forEach(i => { %>
 			<li>
-				<%= i.name %> - <%= i.quantity %> no's
+				<%= i.name %> - <%= i.quantity %> no's -
+				<form action="/cart/<%= i._id %>?_method=delete" method="POST">
+					<input type="submit" value="Remove Item" class="btn btn-danger btn-sm">
+				</form>
 			</li>
 		<% }); %>
 	</ul>
